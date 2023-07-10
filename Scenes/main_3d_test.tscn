@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://dunj1fbx4wxsa"]
+
+[ext_resource type="Script" path="res://Scripts/main_3d.gd" id="1_47wwy"]
+[ext_resource type="PackedScene" uid="uid://bcdr2gu8nwhfd" path="res://Scenes/grid_map_test.tscn" id="1_spr38"]
+[ext_resource type="Script" path="res://Scripts/pathfinding_3d.gd" id="3_mh1ae"]
+[ext_resource type="Script" path="res://Scripts/camera_controler.gd" id="4_lvdv1"]
+
+[sub_resource type="Sky" id="Sky_qrpsy"]
+
+[sub_resource type="Environment" id="Environment_rrncs"]
+background_color = Color(0, 0.756863, 0.768627, 0.788235)
+sky = SubResource("Sky_qrpsy")
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_47wwy")
+
+[node name="Grid" parent="." instance=ExtResource("1_spr38")]
+
+[node name="Pathfinding" type="Node" parent="Grid"]
+script = ExtResource("3_mh1ae")
+
+[node name="CameraControler" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.966823, 0.255446, 0, -0.255446, 0.966823, 0, 0, 0)
+script = ExtResource("4_lvdv1")
+
+[node name="Elevation" type="Node3D" parent="CameraControler"]
+
+[node name="Camera3D" type="Camera3D" parent="CameraControler/Elevation"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.621, 14.586)
+current = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rrncs")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.913387, 0.399727, -0.0770895, 0.292621, -0.513019, 0.80696, 0.283016, -0.759625, -0.585553, 0, 0, 0)
+shadow_enabled = true

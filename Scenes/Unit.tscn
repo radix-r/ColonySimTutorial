@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://ervuavq2d450"]
+
+[ext_resource type="Script" path="res://Scripts/Unit.gd" id="1_r72tn"]
+[ext_resource type="Texture2D" uid="uid://8kvx3you5oee" path="res://Assets/colonist.png" id="2_oj5ls"]
+[ext_resource type="PackedScene" uid="uid://drxpb6jyp65rd" path="res://Scenes/Tooltip.tscn" id="3_xpsq5"]
+[ext_resource type="PackedScene" uid="uid://b1mug7c8hdpf3" path="res://Scenes/MarkdownTooltip.tscn" id="4_odkht"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qg0r4"]
+size = Vector2(128, 128)
+
+[node name="Unit" type="Area2D"]
+script = ExtResource("1_r72tn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_oj5ls")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(64, 64)
+shape = SubResource("RectangleShape2D_qg0r4")
+
+[node name="Tooltip" parent="." instance=ExtResource("3_xpsq5")]
+visuals_res = ExtResource("4_odkht")
+owner_path = NodePath("..")
+offset_x = 10.0
+offset_y = 10.0

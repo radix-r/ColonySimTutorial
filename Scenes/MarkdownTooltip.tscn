@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1mug7c8hdpf3"]
+
+[ext_resource type="Texture2D" uid="uid://v1ohhk2cmsxt" path="res://Art/paper.png" id="1_f4p6u"]
+
+[node name="MarkdownTooltip" type="NinePatchRect"]
+offset_right = 64.0
+offset_bottom = 67.0
+texture = ExtResource("1_f4p6u")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 63.0
+offset_bottom = 69.0
+bbcode_enabled = true
+text = "[b]Test[/b]
+[i]Bingus[/i]
+
+"
+fit_content = true

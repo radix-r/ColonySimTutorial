@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://qawc53wl5hsc"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_fturo"]
+
+[node name="PlaceholderTooltip" type="NinePatchRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("CanvasTexture_fturo")
+region_rect = Rect2(0, 0, 20, 20)

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://du3mov4mn00p6"]
+
+[ext_resource type="PackedScene" uid="uid://lh1muk8ty8b" path="res://Assets/glb/floorTile0.glb" id="1_x05ua"]
+[ext_resource type="PackedScene" uid="uid://dc07mnj14bscr" path="res://Assets/glb/block.glb" id="2_oydox"]
+
+[node name="Library" type="Node3D"]
+
+[node name="floorTile0" parent="." instance=ExtResource("1_x05ua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[node name="block" parent="." instance=ExtResource("2_oydox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
